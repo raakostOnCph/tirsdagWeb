@@ -54,10 +54,16 @@ public class HelloServlet extends HttpServlet {
 
           else {
 
-              out.println("<html><body>");
-              out.println("<h1>" + "hej" + inputNavn  + " dine passwords er ikke ens !" +  "</h1>");
+//              out.println("<html><body>");
+//              out.println("<h1>" + "hej" + inputNavn  + " dine passwords er ikke ens !" +  "</h1>");
+//              out.println("</body></html>");
 
-              out.println("</body></html>");
+
+              String besked = "dine passwords er ikke ens prøv igen";
+
+              request.setAttribute("msg", besked);
+
+              request.getRequestDispatcher("index.jsp").forward(request,response);
 
           }
 

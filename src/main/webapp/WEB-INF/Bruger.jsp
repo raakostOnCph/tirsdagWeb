@@ -14,6 +14,8 @@
 
 <h1> velkomme du er nu logget ind !</h1>
 
+${requestScope.msg}
+
 ${requestScope.brugernavn}
 
 <%--<%=request.getAttribute("brugernavn")%>   // scriptlets  nogo--%>
