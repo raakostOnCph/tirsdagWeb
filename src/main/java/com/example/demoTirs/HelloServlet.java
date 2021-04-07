@@ -35,7 +35,7 @@ public class HelloServlet extends HttpServlet {
           String pass2 = request.getParameter("password2");
           String inputNavn =  request.getParameter("navn");
 
-              PrintWriter out = response.getWriter();
+//              PrintWriter out = response.getWriter();
 
           if (pass1.equals(pass2)) {
 
@@ -44,7 +44,13 @@ public class HelloServlet extends HttpServlet {
 //              out.println("<h1>" +  "dit password er  " + pass1 +  "</h1>");
 //              out.println("<h1>" + "dit password er  " + pass2 +  "</h1>");
 //              out.println("</body></html>");
+                 HttpSession session = request.getSession();
 
+                 String sessionid = session.getId();
+
+
+
+                 request.setAttribute("sessionId", sessionid);
 
               request.setAttribute("brugernavn",inputNavn);
               request.getRequestDispatcher("/WEB-INF/Bruger.jsp").forward(request,response);
@@ -75,9 +81,6 @@ public class HelloServlet extends HttpServlet {
 
 
 
-
-        out.write("</body>\n");
-        out.write("</html>");
 
     }
 

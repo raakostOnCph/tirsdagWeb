@@ -32,6 +32,6 @@ ${requestScope.msg}
 
 
 
-<a href="hello-servlet">Hello Servlet</a>
+<a href="https://www.dr.dk/">Hello Servlet</a>
 </body>
 </html>

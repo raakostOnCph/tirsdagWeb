@@ -16,7 +16,9 @@
 
 ${requestScope.msg}
 
-${requestScope.brugernavn}
+dit navn er ${requestScope.brugernavn}
+<br>
+dit sessionid er ${requestScope.sessionId}
 
 <%--<%=request.getAttribute("brugernavn")%>   // scriptlets  nogo--%>
 
