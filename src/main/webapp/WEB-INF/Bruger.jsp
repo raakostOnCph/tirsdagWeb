@@ -16,9 +16,23 @@
 
 ${requestScope.msg}
 
-dit navn er ${requestScope.brugernavn}
+dit navn er ${sessionScope.brugernavn}
 <br>
-dit sessionid er ${requestScope.sessionId}
+dit sessionid er ${sessionScope.sessionid}
+
+
+<h1> Her kan du tilfeje emner til din huskesedel</h1>
+
+du har nu til ${sessionScope.emneListeSize} emner   // ser her
+
+<form action="TilfoejEmne" method="post">
+    <label for="emne">Emne:</label><br>
+    <input type="text" id="emne" name="emne" value="Børst tænder"><br>
+
+    <input type="submit" value="Tilføj emne">
+</form>
+
+
 
 <%--<%=request.getAttribute("brugernavn")%>   // scriptlets  nogo--%>
 

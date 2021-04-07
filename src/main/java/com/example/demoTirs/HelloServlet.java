@@ -50,7 +50,10 @@ public class HelloServlet extends HttpServlet {
 
 
 
-                 request.setAttribute("sessionId", sessionid);
+
+
+                session.setAttribute("brugernavn",inputNavn);
+                session.setAttribute("sessionid", sessionid);
 
               request.setAttribute("brugernavn",inputNavn);
               request.getRequestDispatcher("/WEB-INF/Bruger.jsp").forward(request,response);
