@@ -1,6 +1,7 @@
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import javax.xml.ws.spi.http.HttpContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class TilfoejEmne extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.getRequestDispatcher("/WEB-INF/Oversigt.jsp").forward(request,response);
 
 
     }
@@ -25,6 +27,19 @@ public class TilfoejEmne extends HttpServlet {
 
                     HttpSession session = request.getSession();
 
+                    ServletContext context = request.getServletContext();
+
+                    List<String> emneListeContext = (List<String>) context.getAttribute("emneListeContext");
+
+                    if (emneListeContext == null) {
+
+                         emneListeContext = new ArrayList<>();
+
+                    }
+
+                    emneListeContext.add(emne);
+                    int contextSize = emneListeContext.size();
+
 
 //
 
@@ -38,7 +53,11 @@ public class TilfoejEmne extends HttpServlet {
 
         emneListe.add(emne);
 
+
         int emneListeSize = emneListe.size();
+
+        context.setAttribute("emneListeContext", emneListeContext);
+        context.setAttribute("contextSize", contextSize);
 
         session.setAttribute("emneListe", emneListe);
         session.setAttribute("emneListeSize", emneListeSize);

@@ -28,7 +28,7 @@ du har nu til ${sessionScope.emneListeSize} emner   // ser her
 
 <form action="TilfoejEmne" method="post">
     <label for="emne">Emne:</label><br>
-    <input type="text" id="emne" name="emne" value="Børst tænder"><br>
+    <input type="text" id="emne" name="emne" value=""><br>
 
     <input type="submit" value="Tilføj emne">
 </form>
@@ -42,6 +42,12 @@ du har nu til ${sessionScope.emneListeSize} emner   // ser her
 </c:forEach>
 
 
+
+<form action="TilfoejEmne" method="get">
+
+
+    <input type="submit" value="gå til oversigt">
+</form>
 
 
 <%--<%=request.getAttribute("brugernavn")%>   // scriptlets  nogo--%>
